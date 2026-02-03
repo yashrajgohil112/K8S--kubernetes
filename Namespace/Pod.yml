@@ -1,0 +1,12 @@
+// to create pod in namespace we crearted as nginx 
+kind: Pod
+apiVersion: v1
+metadata:
+ name: nginx-pod
+ namespace: nginx
+spec:
+ containers:
+ - name: nginx
+   image: nginx:latest
+   ports:
+   - containerPort: 80
