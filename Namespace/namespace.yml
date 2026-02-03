@@ -1,0 +1,5 @@
+#to create namespace  and run with this command : kubectl apply -f namespace.yml
+kind: namespace
+apiVersion: v1
+metadata:
+ name: nginx
