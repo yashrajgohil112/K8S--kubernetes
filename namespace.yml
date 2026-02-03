@@ -1,6 +1,0 @@
-// to create namespace
-
-kind: namespace
-apiVersion: v1
-metadata:
- name: nginx
