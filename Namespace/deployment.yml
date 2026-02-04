@@ -1,0 +1,30 @@
+#WHY TO CREATE A DEPLOYMENT OF A POD?
+# Deployment creates and scales the pods, Once traffic increases pod also increases and replicates. Also we can create a pod from here!
+
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+ name: nginx-deployment
+ namespace: nginx
+spec:
+ replicas: 2
+ selector:
+  matchLabels:
+   app: nginx
+
+ template:
+  metadata:
+   labels:
+    app: nginx
+
+  spec:
+   containers:
+   - name: nginx
+     image: nginx:latest
+     ports:
+     - containerPort: 80
+
+     #TO RUN: kubectl apply -f deployment.yml
+     # TO SEE DEPLOYMENT: kubectl get deployment -n nginx
+     # TO SEE CREATED PODS REPLICA: kubectl gt pods -n nginx
+     # TO SCALE THE REPLICA OR POD: kubectl scale deployment/nginx-deployment -n nginx --replicas=5
